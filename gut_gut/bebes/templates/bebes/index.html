@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Gut Gut - Bebês</title>
+</head>
+<body>
+    <h1>Bebês</h1>
+    <ul>
+        {% for bebe in bebes %}
+        <li><a href="{% url 'detalhes_bebe' bebe.id %}">{{ bebe.nome }}</a></li>
+        {% endfor %}
+    </ul>
+    <a href="{% url 'adicionar_registro' %}">Adicionar Novo Bebê</a>
+</body>
+</html>

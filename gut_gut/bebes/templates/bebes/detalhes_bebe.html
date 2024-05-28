@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Gut Gut - Detalhes do Bebê</title>
+</head>
+<body>
+    <h1>{{ bebe.nome }}</h1>
+    <p>Data de Nascimento: {{ bebe.data_nascimento }}</p>
+    <p>Peso: {{ bebe.peso }} kg</p>
+    <p>Altura: {{ bebe.altura }} cm</p>
+    <p>Grupo Sanguíneo: {{ bebe.grupo_sanguineo }}</p>
+
+    <h2>Alimentações</h2>
+    <ul>
+        {% for alimentacao in alimentacoes %}
+        <li>{{ alimentacao.data_hora }} - {{ alimentacao.tipo }} - {{ alimentacao.quantidade }} ml</li>
+        {% endfor %}
+    </ul>
+
+    <h2>Trocas de Fralda</h2>
+    <ul>
+        {% for troca in trocas %}
+        <li>{{ troca.data_hora }} - {{ troca.tipo }} - {{ troca.observacoes }}</li>
+        {% endfor %}
+    </ul>
+
+    <h2>Sonos</h2>
+    <ul>
+        {% for sono in sonos %}
+        <li>{{ sono.data_hora_inicio }} a {{ sono.data_hora_fim }} - {{ sono.qualidade }}</li>
+        {% endfor %}
+    </ul>
+
+    <h2>Consultas Médicas</h2>
+    <ul>
+        {% for consulta in consultas %}
+        <li>{{ consulta.data_hora }} - {{ consulta.medico }} - {{ consulta.motivo }} - {{ consulta.observacoes }}</li>
+        {% endfor %}
+    </ul>
+</body>
+</html>
